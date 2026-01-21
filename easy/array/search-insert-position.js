@@ -25,29 +25,12 @@
  */
 
 /**
+ * ChatGPT O (log n) binary search
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
  */
-var searchInsert = function (nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === target) {
-            return i;
-        }
-        if (nums[i] > target) {
-            return i;
-        }
-        if (i === nums.length - 1) {
-            return i + 1;
-        }
-    }
-}
-
-/**
- * ChatGPT O (log n)
- */
-
-function searchInsert2(nums, target) {
+function searchInsert(nums, target) {
     let left = 0;
     let right = nums.length - 1;
 
@@ -71,6 +54,23 @@ function searchInsert2(nums, target) {
     return left;
 }
 
-console.log(searchInsert2([1, 3, 5, 6], 5))
-console.log(searchInsert2([1, 3, 5, 6], 2))
-console.log(searchInsert2([1, 3, 5, 6], 7))
+
+console.log(searchInsert([1, 3, 5, 6], 5))
+console.log(searchInsert([1, 3, 5, 6], 2))
+console.log(searchInsert([1, 3, 5, 6], 7))
+
+var searchInsert2 = function (nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === target) {
+            return i;
+        }
+        if (nums[i] > target) {
+            return i;
+        }
+        if (i === nums.length - 1) {
+            return i + 1;
+        }
+    }
+}
+
+
